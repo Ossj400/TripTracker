@@ -1,0 +1,13 @@
+C:\Users\Artur\source\repos\TripTracker.BackService\bin\Debug\netcoreapp2.0\appsettings.Development.json
+C:\Users\Artur\source\repos\TripTracker.BackService\bin\Debug\netcoreapp2.0\appsettings.json
+C:\Users\Artur\source\repos\TripTracker.BackService\bin\Debug\netcoreapp2.0\Properties\launchSettings.json
+C:\Users\Artur\source\repos\TripTracker.BackService\bin\Debug\netcoreapp2.0\TripTracker.BackService.deps.json
+C:\Users\Artur\source\repos\TripTracker.BackService\bin\Debug\netcoreapp2.0\TripTracker.BackService.runtimeconfig.json
+C:\Users\Artur\source\repos\TripTracker.BackService\bin\Debug\netcoreapp2.0\TripTracker.BackService.runtimeconfig.dev.json
+C:\Users\Artur\source\repos\TripTracker.BackService\bin\Debug\netcoreapp2.0\TripTracker.BackService.dll
+C:\Users\Artur\source\repos\TripTracker.BackService\bin\Debug\netcoreapp2.0\TripTracker.BackService.pdb
+C:\Users\Artur\source\repos\TripTracker.BackService\obj\Debug\netcoreapp2.0\TripTracker.BackService.csprojAssemblyReference.cache
+C:\Users\Artur\source\repos\TripTracker.BackService\obj\Debug\netcoreapp2.0\TripTracker.BackService.AssemblyInfoInputs.cache
+C:\Users\Artur\source\repos\TripTracker.BackService\obj\Debug\netcoreapp2.0\TripTracker.BackService.AssemblyInfo.cs
+C:\Users\Artur\source\repos\TripTracker.BackService\obj\Debug\netcoreapp2.0\TripTracker.BackService.dll
+C:\Users\Artur\source\repos\TripTracker.BackService\obj\Debug\netcoreapp2.0\TripTracker.BackService.pdb
