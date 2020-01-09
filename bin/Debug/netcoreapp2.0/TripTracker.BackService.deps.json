@@ -27,7 +27,8 @@
           "Microsoft.AspNetCore.All": "2.0.9",
           "Microsoft.NETCore.App": "2.0.0",
           "Swashbuckle.AspNetCore": "4.0.1",
-          "Swashbuckle.AspNetCore.Swagger": "4.0.1"
+          "Swashbuckle.AspNetCore.Swagger": "4.0.1",
+          "TripTrackerDTO": "1.0.0"
         },
         "runtime": {
           "TripTracker.BackService.dll": {}
@@ -1087,7 +1088,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.Core": "2.0.4",
           "Microsoft.Extensions.Localization": "2.0.3",
-          "System.ComponentModel.Annotations": "4.4.0"
+          "System.ComponentModel.Annotations": "4.7.0"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.DataAnnotations.dll": {
@@ -1868,7 +1869,7 @@
           "Microsoft.Extensions.Logging": "2.0.2",
           "Remotion.Linq": "2.1.1",
           "System.Collections.Immutable": "1.4.0",
-          "System.ComponentModel.Annotations": "4.4.0",
+          "System.ComponentModel.Annotations": "4.7.0",
           "System.Diagnostics.DiagnosticSource": "4.4.1",
           "System.Interactive.Async": "3.1.1"
         },
@@ -2333,7 +2334,7 @@
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "2.0.3",
           "Microsoft.Extensions.Logging": "2.0.2",
           "Microsoft.Extensions.Options": "2.0.2",
-          "System.ComponentModel.Annotations": "4.4.0"
+          "System.ComponentModel.Annotations": "4.7.0"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Extensions.Identity.Core.dll": {
@@ -2349,7 +2350,7 @@
         "dependencies": {
           "Microsoft.Extensions.Identity.Core": "2.0.4",
           "Microsoft.Extensions.Logging": "2.0.2",
-          "System.ComponentModel.Annotations": "4.4.0"
+          "System.ComponentModel.Annotations": "4.7.0"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Extensions.Identity.Stores.dll": {
@@ -3184,7 +3185,17 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.ComponentModel.Annotations/4.4.0": {},
+      "System.ComponentModel.Annotations/4.7.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.ComponentModel.Annotations.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.6.26515.6"
+          }
+        },
+        "compile": {
+          "ref/netstandard2.0/System.ComponentModel.Annotations.dll": {}
+        }
+      },
       "System.ComponentModel.Primitives/4.3.0": {
         "dependencies": {
           "System.ComponentModel": "4.3.0",
@@ -4154,6 +4165,17 @@
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
         }
       },
+      "TripTrackerDTO/1.0.0": {
+        "dependencies": {
+          "System.ComponentModel.Annotations": "4.7.0"
+        },
+        "runtime": {
+          "TripTrackerDTO.dll": {}
+        },
+        "compile": {
+          "TripTrackerDTO.dll": {}
+        }
+      },
       "Microsoft.NETCore.App/2.0.0": {
         "dependencies": {
           "Microsoft.NETCore.DotNetHostPolicy": "2.0.0",
@@ -4171,7 +4193,6 @@
           "ref/netcoreapp2.0/System.Collections.NonGeneric.dll": {},
           "ref/netcoreapp2.0/System.Collections.Specialized.dll": {},
           "ref/netcoreapp2.0/System.Collections.dll": {},
-          "ref/netcoreapp2.0/System.ComponentModel.Annotations.dll": {},
           "ref/netcoreapp2.0/System.ComponentModel.Composition.dll": {},
           "ref/netcoreapp2.0/System.ComponentModel.DataAnnotations.dll": {},
           "ref/netcoreapp2.0/System.ComponentModel.EventBasedAsync.dll": {},
@@ -5773,12 +5794,12 @@
       "path": "system.componentmodel/4.3.0",
       "hashPath": "system.componentmodel.4.3.0.nupkg.sha512"
     },
-    "System.ComponentModel.Annotations/4.4.0": {
+    "System.ComponentModel.Annotations/4.7.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-29K3DQ+IGU7LBaMjTo7SI7T7X/tsMtLvz1p56LJ556Iu0Dw3pKZw5g8yCYCWMRxrOF0Hr0FU0FwW0o42y2sb3A==",
-      "path": "system.componentmodel.annotations/4.4.0",
-      "hashPath": "system.componentmodel.annotations.4.4.0.nupkg.sha512"
+      "sha512": "sha512-0YFqjhp/mYkDGpU0Ye1GjE53HMp9UVfGN7seGpAMttAC0C40v5gw598jCgpbBLMmCo0E5YRLBv5Z2doypO49ZQ==",
+      "path": "system.componentmodel.annotations/4.7.0",
+      "hashPath": "system.componentmodel.annotations.4.7.0.nupkg.sha512"
     },
     "System.ComponentModel.Primitives/4.3.0": {
       "type": "package",
@@ -6367,6 +6388,11 @@
       "sha512": "sha512-W6ZZ0/o7+3Qb77mRAQyLjPudHG3OMeeQ4p9yY13PUdJArmRCx2cLMm5F4tpIjJXxzHC0ew0oK7DMDGILMdfCnw==",
       "path": "windowsazure.storage/8.1.4",
       "hashPath": "windowsazure.storage.8.1.4.nupkg.sha512"
+    },
+    "TripTrackerDTO/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Microsoft.NETCore.App/2.0.0": {
       "type": "package",

@@ -11,3 +11,6 @@ C:\Users\Artur\source\repos\TripTracker.BackService\obj\Debug\netcoreapp2.0\Trip
 C:\Users\Artur\source\repos\TripTracker.BackService\obj\Debug\netcoreapp2.0\TripTracker.BackService.AssemblyInfo.cs
 C:\Users\Artur\source\repos\TripTracker.BackService\obj\Debug\netcoreapp2.0\TripTracker.BackService.dll
 C:\Users\Artur\source\repos\TripTracker.BackService\obj\Debug\netcoreapp2.0\TripTracker.BackService.pdb
+C:\Users\Artur\source\repos\TripTracker.BackService\bin\Debug\netcoreapp2.0\TripTrackerDTO.dll
+C:\Users\Artur\source\repos\TripTracker.BackService\bin\Debug\netcoreapp2.0\TripTrackerDTO.pdb
+C:\Users\Artur\source\repos\TripTracker.BackService\obj\Debug\netcoreapp2.0\TripTracker.BackService.csproj.CopyComplete
