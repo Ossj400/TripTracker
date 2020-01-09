@@ -7,23 +7,24 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using TripTracker.BackService.Models;
 using TripTracker.UI.Data;
+using TripTracker.UI.Services;
 
-namespace TripTracker.UI
+namespace TripTracker.UI.Pages.Trips
 {
-    public class IndexModel : PageModel
-    {
-        private readonly TripTracker.UI.Data.ApplicationDbContext _context;
+	public class IndexModel : PageModel
+	{
+		private readonly IApiClient _Client;
 
-        public IndexModel(TripTracker.UI.Data.ApplicationDbContext context)
-        {
-            _context = context;
-        }
+		public IndexModel(IApiClient client)
+		{
+			_Client = client;
+		}
 
-        public IList<Trip> Trip { get;set; }
+		public IList<Trip> Trips { get; set; }
 
-        public async Task OnGetAsync()
-        {
-            Trip = await _context.Trip.ToListAsync();
-        }
-    }
+		public async Task OnGetAsync()
+		{
+			Trips = await _Client.GetTripsAsync();
+		}
+	}
 }

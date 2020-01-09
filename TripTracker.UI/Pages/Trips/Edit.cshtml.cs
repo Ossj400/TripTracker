@@ -2,74 +2,59 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using TripTracker.BackService.Models;
 using TripTracker.UI.Data;
+using TripTracker.UI.Services;
 
-namespace TripTracker.UI
+namespace TripTracker.UI.Pages.Trips
 {
-    public class EditModel : PageModel
-    {
-        private readonly TripTracker.UI.Data.ApplicationDbContext _context;
 
-        public EditModel(TripTracker.UI.Data.ApplicationDbContext context)
-        {
-            _context = context;
-        }
+	[Authorize]
+	public class EditModel : PageModel
+	{
+		private readonly IApiClient _client;
 
-        [BindProperty]
-        public Trip Trip { get; set; }
+		public EditModel(IApiClient client)
+		{
+			_client = client;
+		}
 
-        public async Task<IActionResult> OnGetAsync(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+		[BindProperty]
+		public Trip Trip { get; set; }
 
-            Trip = await _context.Trip.SingleOrDefaultAsync(m => m.Id == id);
+		public async Task<IActionResult> OnGetAsync(int? id)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
 
-            if (Trip == null)
-            {
-                return NotFound();
-            }
-            return Page();
-        }
+			Trip = await _client.GetTripAsync(id.Value);
 
-        public async Task<IActionResult> OnPostAsync()
-        {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+			if (Trip == null)
+			{
+				return NotFound();
+			}
 
-            _context.Attach(Trip).State = EntityState.Modified;
+			return Page();
+		}
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!TripExists(Trip.Id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+		public async Task<IActionResult> OnPostAsync()
+		{
+			if (!ModelState.IsValid)
+			{
+				return Page();
+			}
 
-            return RedirectToPage("./Index");
-        }
+			await _client.PutTripAsync(Trip);
 
-        private bool TripExists(int id)
-        {
-            return _context.Trip.Any(e => e.Id == id);
-        }
-    }
+			return RedirectToPage("./Index");
+		}
+
+	}
 }

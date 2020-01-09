@@ -2,42 +2,45 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using TripTracker.BackService.Models;
 using TripTracker.UI.Data;
+using TripTracker.UI.Services;
 
-namespace TripTracker.UI
+namespace TripTracker.UI.Pages.Trips
 {
-    public class CreateModel : PageModel
-    {
-        private readonly TripTracker.UI.Data.ApplicationDbContext _context;
 
-        public CreateModel(TripTracker.UI.Data.ApplicationDbContext context)
-        {
-            _context = context;
-        }
+	[Authorize]
+	public class CreateModel : PageModel
+	{
+		private readonly IApiClient _client;
 
-        public IActionResult OnGet()
-        {
-            return Page();
-        }
+		public CreateModel(IApiClient client)
+		{
+			_client = client;
+		}
 
-        [BindProperty]
-        public Trip Trip { get; set; }
+		public IActionResult OnGet()
+		{
+			return Page();
+		}
 
-        public async Task<IActionResult> OnPostAsync()
-        {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+		[BindProperty]
+		public Trip Trip { get; set; }
 
-            _context.Trip.Add(Trip);
-            await _context.SaveChangesAsync();
+		public async Task<IActionResult> OnPostAsync()
+		{
+			if (!ModelState.IsValid)
+			{
+				return Page();
+			}
 
-            return RedirectToPage("./Index");
-        }
-    }
+			await _client.AddTripAsync(Trip);
+
+			return RedirectToPage("./Index");
+		}
+	}
 }

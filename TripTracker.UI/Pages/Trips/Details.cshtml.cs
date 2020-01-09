@@ -7,16 +7,17 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using TripTracker.BackService.Models;
 using TripTracker.UI.Data;
+using TripTracker.UI.Services;
 
-namespace TripTracker.UI
+namespace TripTracker.UI.Pages.Trips
 {
     public class DetailsModel : PageModel
     {
-        private readonly TripTracker.UI.Data.ApplicationDbContext _context;
+        private readonly IApiClient _Client;
 
-        public DetailsModel(TripTracker.UI.Data.ApplicationDbContext context)
+        public DetailsModel(IApiClient client)
         {
-            _context = context;
+            _Client = client;
         }
 
         public Trip Trip { get; set; }
@@ -28,7 +29,7 @@ namespace TripTracker.UI
                 return NotFound();
             }
 
-            Trip = await _context.Trip.SingleOrDefaultAsync(m => m.Id == id);
+            Trip = await _Client.GetTripAsync(id.Value);
 
             if (Trip == null)
             {
